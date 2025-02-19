@@ -1,0 +1,4 @@
+*.o
+objs/
+psv
+checker_linux

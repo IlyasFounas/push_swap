@@ -1,0 +1,49 @@
+{
+  "scale_factor": 1.4000001,
+  "egui_opacity": 240,
+  "push_swap_path": "/home/ifounas/Documents/in_progress/push_swap2/push_swap",
+  "current_profile": 0,
+  "color_profiles": [
+    {
+      "name": "Default",
+      "colors": {
+        "FromGradient": {
+          "steps": [
+            [
+              0.0,
+              [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            [
+              0.5,
+              [
+                1.0,
+                1.0,
+                0.0,
+                1.0
+              ]
+            ],
+            [
+              1.0,
+              [
+                0.0,
+                1.0,
+                0.0,
+                1.0
+              ]
+            ]
+          ]
+        }
+      },
+      "clear_color": [
+        0.1,
+        0.2,
+        0.3
+      ]
+    }
+  ]
+}
