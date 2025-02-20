@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 19:23:22 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/19 15:21:41 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/20 19:00:17 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 static void	replace_stack_a(t_stacks *stacks)
 {
-	if (is_stack_a_sorted(stacks) == 1 
-	&& stacks->size_a == stacks->nb_values)
+	if (is_stack_a_sorted(stacks) == 1 && stacks->size_a == stacks->nb_values)
 		return ;
 	while (stacks->a[stacks->size_a - 1] < stacks->a[0]
 		&& stacks->a[stacks->size_a - 1] > stacks->b[0])
@@ -74,9 +73,8 @@ void	no_logical_sort(t_stacks *stacks)
 		no_logical_a_bigger_than_b(stacks);
 		replace_b(stacks);
 		no_logical_sort_full_a(stacks);
-		if (stacks->size_a != stacks->nb_values 
-		&& stacks->a[0] < stacks->b[0] 
-		&& stacks->a[stacks->size_a - 1] < stacks->b[0])
+		if (stacks->size_a != stacks->nb_values && stacks->a[0] < stacks->b[0]
+			&& stacks->a[stacks->size_a - 1] < stacks->b[0])
 		{
 			if (stacks->a[stacks->size_a - 1] < stacks->b[0])
 			{
@@ -84,8 +82,8 @@ void	no_logical_sort(t_stacks *stacks)
 				ft_ra(stacks, 1);
 			}
 		}
-		if (stacks->size_a != stacks->nb_values 
-		&& stacks->a[stacks->size_a - 1] > stacks->b[0])
+		if (stacks->size_a != stacks->nb_values && stacks->a[stacks->size_a
+				- 1] > stacks->b[0])
 		{
 			if (stacks->size_b > 3)
 				no_logical_search_best_move(stacks);

@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:27:55 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/13 15:49:14 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/20 18:59:11 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ long int	ft_atoi_error(const char *nptr)
 	int			i;
 	int			neg;
 	long int	nb;
+	int			temp;
 
 	nb = 0;
 	neg = 1;
 	i = 0;
+	temp = 0;
 	if (ft_verif(nptr) == 0)
 		return (LONG_MIN + 1);
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == ' '))
@@ -50,14 +52,13 @@ long int	ft_atoi_error(const char *nptr)
 	i = is_or_isnt_negatif(nptr[i], &neg, i);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (neg == 1 && nb > ((2147483647 - (nptr[i] - 48)) / 10))
+		if (nb * neg != (int)(nb * neg))
 			return (LONG_MIN + 1);
-		if (-nb < (((-2147483648) + (nptr[i] - 48)) / 10))
-			return (LONG_MIN + 1);
-		nb = (nb * 10) + (nptr[i] - 48);
-		i++;
+		nb = (nb * 10) + (nptr[i++] - 48);
+		if (!temp)
+			temp++;
 	}
-	if ((nptr[i] == '+' || nptr[i] == '-' || ft_isalpha(nptr[i]) == 1))
+	if (!temp)
 		return (LONG_MIN + 1);
 	return (nb * neg);
 }

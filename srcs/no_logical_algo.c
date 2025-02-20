@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:05:10 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/19 15:21:51 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/20 18:59:42 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ void	no_logical_sort_full_a(t_stacks *stacks)
 	int	rra;
 
 	rra = 0;
-	if (is_stack_a_sorted(stacks) == 1 
-	&& stacks->size_a == stacks->nb_values)
+	if (is_stack_a_sorted(stacks) == 1 && stacks->size_a == stacks->nb_values)
 		return ;
 	if (stacks->a[0] > stacks->a[stacks->size_a - 1])
 	{
@@ -82,8 +81,7 @@ void	no_logical_rotate(t_stacks *stacks, int lastone)
 	int	ra;
 
 	ra = 0;
-	if (is_stack_a_sorted(stacks) == 1 
-	&& stacks->size_a == stacks->nb_values)
+	if (is_stack_a_sorted(stacks) == 1 && stacks->size_a == stacks->nb_values)
 		return ;
 	while (stacks->a[ra] < stacks->b[0])
 	{
@@ -122,9 +120,4 @@ void	no_logical_algo(t_stacks *stacks)
 		no_logical_sort_of_3(stacks);
 		no_logical_sort(stacks);
 	}
-	// while (is_stack_a_sorted(stacks) == 0 && stacks->nb_neg > 0)
-	// {
-	// 	ft_rra(stacks, 1);
-	// 	stacks->nb_neg--;
-	// }
 }

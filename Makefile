@@ -22,7 +22,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 $(NAME): $(LIBFT) $(OBJ)  Makefile ft_printf/ft_printf.h includes/push_swap.h $(LIBFT_DIR)/libft.h
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)/%.o: srcs/%.c
+$(OBJ_DIR)/%.o: srcs/%.c includes/push_swap.h
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -43,12 +43,9 @@ fclean: clean
 
 re: fclean all
 
-run: $(NAME)
-	valgrind ./$(NAME) -14 10 -201 18 2 78 -63 10005 -52 -10000 -85 95 22 21
-
 all: $(NAME)
 
 force:
 
-.PHONY: all clean fclean re run
+.PHONY: all clean fclean re run force
 

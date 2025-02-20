@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 18:20:20 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/19 11:11:48 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/20 18:59:55 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	sort_a_index(t_stacks *stacks)
 	while (++i < stacks->nb_values)
 	{
 		if (i + 1 < stacks->nb_values && stacks->a_index[i] > stacks->a_index[i
-			+ 1])
+				+ 1])
 		{
 			tmp = stacks->a_index[i];
 			stacks->a_index[i] = stacks->a_index[i + 1];
