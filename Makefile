@@ -13,25 +13,26 @@ SRC     = srcs/main.c \
           ft_printf/ft_printf_utils.c 
 OBJ_DIR = objs
 OBJ     = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
-CFLAGS  = -Wall -Wextra -Werror -g3 -I/usr/include -I../libft/includes -I includes
+CFLAGS  = -Wall -Wextra -Werror -g3 -Ilibft/includes -Iincludes
 CC      = cc
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-$(NAME): $(LIBFT) $(OBJ)  Makefile ft_printf/ft_printf.h includes/push_swap.h $(LIBFT_DIR)/libft.h
+$(NAME): $(LIBFT) $(OBJ) $(LIBFT_DIR)/libft.h
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
-$(OBJ_DIR)/%.o: srcs/%.c includes/push_swap.h
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: srcs/%.c includes/push_swap.h | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJ_DIR)/%.o: ft_printf/%.c ft_printf/ft_printf.h
-	mkdir -p $(OBJ_DIR)
+$(OBJ_DIR)/%.o: ft_printf/%.c ft_printf/ft_printf.h | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT): force
 	make -C $(LIBFT_DIR)
+
+$(OBJ_DIR):
+		mkdir -p $(OBJ_DIR)
 
 clean:
 	rm -rf $(OBJ_DIR)

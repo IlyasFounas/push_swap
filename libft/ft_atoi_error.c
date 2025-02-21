@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:27:55 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/20 18:59:11 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:19:27 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ long int	ft_atoi_error(const char *nptr)
 	i = is_or_isnt_negatif(nptr[i], &neg, i);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
+		nb = (nb * 10) + (nptr[i++] - 48);
 		if (nb * neg != (int)(nb * neg))
 			return (LONG_MIN + 1);
-		nb = (nb * 10) + (nptr[i++] - 48);
 		if (!temp)
 			temp++;
 	}

@@ -1,8 +1,8 @@
 *.o
-objs/
+objs
 psv
 checker_linux
 psv
 push_swap
 push_swap_tester/
-psvconf.json
+.*
