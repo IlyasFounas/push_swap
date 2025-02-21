@@ -2,3 +2,6 @@
 objs/
 psv
 checker_linux
+psv
+push_swap
+push_swap_tester/

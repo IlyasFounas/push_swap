@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 18:20:20 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/20 18:59:55 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/21 13:38:16 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	main(int arc, char **arv)
 	while (++i < arc)
 	{
 		stacks.nb_neg = count_nb_of_neg(&stacks, ft_atoi_error(arv[i]));
-		stacks.a[i - 1] = ft_atoi_error(arv[i]);
+		stacks.a[i - 1] = (int)ft_atoi_error(arv[i]);
 	}
 	if (is_there_any_duplicate(&stacks) == 0)
 		return (ft_putstr_fd("Error\n", 2), free_stacks(&stacks), 1);
