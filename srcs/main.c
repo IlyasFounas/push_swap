@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 18:20:20 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/21 13:38:16 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/22 15:08:14 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,10 @@ int	main(int arc, char **arv)
 	stacks.nb_values = arc - 1;
 	stacks.size_a = arc - 1;
 	stacks.size_b = 0;
+	if (arc < 2)
+		return (1);
 	if (ft_alloc_my_stacks(&stacks) == 0)
 		return (1);
-	if (arc < 2)
-		return (free_stacks(&stacks), 1);
 	while (++i < arc)
 	{
 		stacks.nb_neg = count_nb_of_neg(&stacks, ft_atoi_error(arv[i]));
@@ -106,4 +106,5 @@ int	main(int arc, char **arv)
 	sort_a_index(&stacks);
 	no_logical_algo(&stacks);
 	free_stacks(&stacks);
+	return (0);
 }
