@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:05:10 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/20 18:59:42 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/25 14:50:46 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ void	no_logical_sort_of_3(t_stacks *stacks)
 	while (is_stack_a_sorted(stacks) == 0)
 	{
 		if (stacks->a[0] > stacks->a[1])
-		{
-			ft_ra(stacks, 1);
-			if (stacks->a[0] > stacks->a[1])
-				ft_sa(stacks, 1);
-		}
+			ft_sa(stacks, 1);
 		else
 		{
 			ft_ra(stacks, 1);
