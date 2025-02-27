@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 14:27:55 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/21 14:19:27 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/27 17:57:09 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ long int	ft_atoi_error(const char *nptr)
 		if (!temp)
 			temp++;
 	}
-	if (!temp)
+	if (!temp || (nptr[i] != '\0'))
 		return (LONG_MIN + 1);
 	return (nb * neg);
 }

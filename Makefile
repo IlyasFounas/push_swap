@@ -19,6 +19,8 @@ CC      = cc
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
+all: $(NAME)
+
 $(NAME): $(LIBFT) $(OBJ) $(LIBFT_DIR)/libft.h
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
@@ -38,13 +40,12 @@ clean:
 	rm -rf $(OBJ_DIR)
 	make clean -C $(LIBFT_DIR)
 
-fclean: clean
+fclean:
+	rm -rf $(OBJ_DIR)
 	rm -f $(NAME)
 	make fclean -C $(LIBFT_DIR)
 
 re: fclean all
-
-all: $(NAME)
 
 force:
 
