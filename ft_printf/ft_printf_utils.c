@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:25:28 by ifounas           #+#    #+#             */
-/*   Updated: 2024/11/28 13:33:59 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/02/28 13:11:43 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ size_t	ft_strlen(const char *s)
 
 int	ft_putstr(char *s)
 {
-	int	i;
-
-	i = 0;
 	if (s == NULL)
 		return (write(1, "(null)", 6));
 	write(1, s, ft_strlen(s));
