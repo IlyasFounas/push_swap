@@ -6,7 +6,7 @@
 /*   By: ifounas <ifounas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 15:05:10 by ifounas           #+#    #+#             */
-/*   Updated: 2025/02/28 18:48:43 by ifounas          ###   ########.fr       */
+/*   Updated: 2025/03/01 10:35:19 by ifounas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,25 @@ void	no_logical_sort_of_3(t_stacks *stacks)
 	{
 		if (stacks->a[0] > stacks->a[1])
 			ft_sa(stacks, 1);
+		return ;
 	}
-	else
+	if (stacks->a[2] < stacks->a[1] && stacks->a[2] < stacks->a[0]
+		&& stacks->a[0] > stacks->a[1])
 	{
-		if (stacks->a[2] < stacks->a[1] && stacks->a[2] < stacks->a[0] && stacks->a[0] > stacks->a[1])
-		{
-			ft_ra(stacks, 1);
-			ft_sa(stacks, 1);
-		}
-		if (stacks->a[2] < stacks->a[1] && stacks->a[2] < stacks->a[0])
-			ft_rra(stacks, 1);
-		if (stacks->a[0] > stacks->a[2] && stacks->a[0] > stacks->a[1])
-			ft_ra(stacks, 1);
-		if (stacks->a[0] > stacks->a[1])
-			ft_sa(stacks, 1);
-		if (stacks->a[1] > stacks->a[2])
-		{
-			ft_ra(stacks, 1);
-			ft_sa(stacks, 1);
-			ft_rra(stacks, 1);
-		}
+		ft_ra(stacks, 1);
+		ft_sa(stacks, 1);
+	}
+	if (stacks->a[2] < stacks->a[1] && stacks->a[2] < stacks->a[0])
+		ft_rra(stacks, 1);
+	if (stacks->a[0] > stacks->a[2] && stacks->a[0] > stacks->a[1])
+		ft_ra(stacks, 1);
+	if (stacks->a[0] > stacks->a[1])
+		ft_sa(stacks, 1);
+	if (stacks->a[1] > stacks->a[2])
+	{
+		ft_ra(stacks, 1);
+		ft_sa(stacks, 1);
+		ft_rra(stacks, 1);
 	}
 }
 
